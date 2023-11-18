@@ -9,3 +9,4 @@ delete from table_test where id = 1 ;
 describe table_test ;
 alter table table_test add column age int ;
 alter table table_test add constraint fk_table_test foreign key (test1_id) references table_test1(id);
+update table_test  set test1_id = ( select id from table_test1 order by rand()  limit 1 );
